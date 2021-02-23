@@ -6,13 +6,8 @@ import thunk  from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 
-import { rootReducer } from './reducers/rootReducer.js'
+import store from './store/store'
 import App from './components/App.js'
-
-const store = createStore(
-    rootReducer, 
-    composeWithDevTools(applyMiddleware(thunk))
-)
 
 ReactDOM.render(
     <Provider store={store}>

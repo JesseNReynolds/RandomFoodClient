@@ -7,7 +7,8 @@ export default class RandomForm extends React.Component {
         this.state = {
             latitude: 0,
             longitude: 0,
-            radius: 5
+            radius: 5,
+            price: 3
         }
     }
 
@@ -34,6 +35,7 @@ export default class RandomForm extends React.Component {
         this.setState({
           [name]: value
         });
+        console.log(this)
       }
 
     render() {
@@ -67,6 +69,18 @@ export default class RandomForm extends React.Component {
                                 )
                             }
                         })}
+                    </select>
+                    <label>
+                        {'Maximum Price'}
+                    </label>
+                    <select
+                    name='price'
+                    value={this.state.price}
+                    onChange={this.handleChange}>
+                        <option value={1}>$</option>
+                        <option value={2}>$$</option>
+                        <option value={3}>$$$</option>
+                        <option value={4}>$$$$</option>
                     </select>
                 </form>
             </div>

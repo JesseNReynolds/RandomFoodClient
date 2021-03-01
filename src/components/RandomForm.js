@@ -1,4 +1,5 @@
 import React from 'react';
+import { BACK_END_URL } from '../globals'
 
 export default class RandomForm extends React.Component {
 
@@ -22,7 +23,7 @@ export default class RandomForm extends React.Component {
 
         navigator.geolocation.getCurrentPosition(
             success => this.setState({ latitude: success.coords.latitude, longitude: success.coords.longitude },
-            error => console.log(error),
+            error => () => console.log(error),
             options
             )
         );
@@ -36,8 +37,23 @@ export default class RandomForm extends React.Component {
         this.setState({
           [name]: value
         });
-        console.log(this)
-      }
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(this.state)
+        console.log(BACK_END_URL)
+        fetch(`${BACK_END_URL}/query`, {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               },
+            method: 'post',
+            body: JSON.stringify(this.state)
+        })
+            .then (response => response.json())
+            .then (data => console.log(data))
+    }
 
     render() {
         const distances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
@@ -47,7 +63,7 @@ export default class RandomForm extends React.Component {
                 <br/>
                 long: {this.state.longitude}
 
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         {'Search Radius: '} 
                     </label>
@@ -95,6 +111,12 @@ export default class RandomForm extends React.Component {
                     name='openBool'
                     checked={this.state.openBool}
                     onChange={this.handleChange} />
+                    <br/>
+                    
+                    <input
+                    type='submit'
+                    />
+
                 </form>
             </div>
         )

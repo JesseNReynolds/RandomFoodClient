@@ -6,7 +6,8 @@ export default class RandomForm extends React.Component {
         super()
         this.state = {
             latitude: 0,
-            longitude: 0
+            longitude: 0,
+            radius: 5
         }
     }
 
@@ -25,12 +26,49 @@ export default class RandomForm extends React.Component {
         );
     }
 
+    // sourced from react.js.org/docs/forms
+    handleChange = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        this.setState({
+          [name]: value
+        });
+      }
+
     render() {
+        const distances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
         return(
             <div>
                 lat: {this.state.latitude}
                 <br/>
                 long: {this.state.longitude}
+
+                <form>
+                    <label>
+                        {'Search Radius: '} 
+                    </label>
+                    <select
+                    name='radius'
+                    value={this.state.radius}
+                    onChange={this.handleChange}>
+                        {distances.map((distance, index) => {
+                            if (index === 0) {
+                                return(
+                                    <option value={distance}>
+                                        {distance} mile
+                                    </option>
+                                )
+                            } else {
+                                return(
+                                    <option value={distance}>
+                                        {distance} miles
+                                    </option>
+                                )
+                            }
+                        })}
+                    </select>
+                </form>
             </div>
         )
     }

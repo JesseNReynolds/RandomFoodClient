@@ -8,7 +8,8 @@ export default class RandomForm extends React.Component {
             latitude: 0,
             longitude: 0,
             radius: 5,
-            price: 3
+            price: 3,
+            openBool: true
         }
     }
 
@@ -82,6 +83,14 @@ export default class RandomForm extends React.Component {
                         <option value={3}>$$$</option>
                         <option value={4}>$$$$</option>
                     </select>
+                    <label>
+                        {'Only show restaurants open now'}
+                    </label>
+                    <input
+                    type='checkbox'
+                    name='openBool'
+                    checked={this.state.openBool}
+                    onChange={this.handleChange} />
                 </form>
             </div>
         )

@@ -71,8 +71,10 @@ export default class RandomForm extends React.Component {
                             }
                         })}
                     </select>
+                    <br/>
+
                     <label>
-                        {'Maximum Price'}
+                        {'Maximum Price: '}
                     </label>
                     <select
                     name='price'
@@ -83,8 +85,10 @@ export default class RandomForm extends React.Component {
                         <option value={3}>$$$</option>
                         <option value={4}>$$$$</option>
                     </select>
+                    <br/>
+
                     <label>
-                        {'Only show restaurants open now'}
+                        {'Only Show Restaurants Open Now'}
                     </label>
                     <input
                     type='checkbox'

@@ -1,7 +1,9 @@
 import React from 'react';
 import { BACK_END_URL } from '../globals'
+import { connect } from 'react-redux'
+import { setResults } from '../redux/resultsSlice';
 
-export default class RandomForm extends React.Component {
+class RandomForm extends React.Component {
 
     constructor() {
         super()
@@ -52,7 +54,7 @@ export default class RandomForm extends React.Component {
             body: JSON.stringify(this.state)
         })
             .then (response => response.json())
-            .then (data => console.log(data))
+            .then (data => this.props.dispatch(setResults(data)))
     }
 
     render() {
@@ -123,3 +125,5 @@ export default class RandomForm extends React.Component {
     }
 
 }
+
+export default connect()(RandomForm)

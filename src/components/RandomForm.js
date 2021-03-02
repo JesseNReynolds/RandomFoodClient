@@ -14,6 +14,7 @@ export default class RandomForm extends React.Component {
         }
     }
 
+    // get location through browser geolocation API
     componentDidMount() {
         const options = {
             enableHighAccuracy: true,
@@ -29,7 +30,6 @@ export default class RandomForm extends React.Component {
         );
     }
 
-    // sourced from react.js.org/docs/forms
     handleChange = (event) => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;

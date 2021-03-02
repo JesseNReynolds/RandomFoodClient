@@ -1,6 +1,6 @@
 import React from 'react';
-import { BACK_END_URL } from '../globals'
-import { connect } from 'react-redux'
+import { BACK_END_URL } from '../globals';
+import { connect } from 'react-redux';
 import { setResults } from '../redux/resultsSlice';
 
 class RandomForm extends React.Component {
@@ -43,8 +43,6 @@ class RandomForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.state)
-        console.log(BACK_END_URL)
         fetch(`${BACK_END_URL}/query`, {
             headers : { 
                 'Content-Type': 'application/json',
@@ -55,6 +53,8 @@ class RandomForm extends React.Component {
         })
             .then (response => response.json())
             .then (data => this.props.dispatch(setResults(data)))
+            .then (this.props.history.push('/random/filter'))
+        
     }
 
     render() {

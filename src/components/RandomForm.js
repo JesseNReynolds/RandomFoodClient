@@ -53,7 +53,6 @@ class RandomForm extends React.Component {
         })
             .then (response => response.json())
             .then (data => this.props.dispatch(setResults(data)))
-            .then (this.props.history.push('/random/filter'))
         
     }
 
@@ -126,4 +125,4 @@ class RandomForm extends React.Component {
 
 }
 
-export default connect()(RandomForm)
+export default connect(null)(RandomForm)

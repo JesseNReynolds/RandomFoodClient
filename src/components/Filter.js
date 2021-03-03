@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 
 class Filter extends React.Component {
 
+    // access store to get results
     render() {
         return (
             <div>
-                test
+                <button onClick={() => console.log(this)}>filter</button>
             </div>
         )
     }
@@ -14,4 +15,11 @@ class Filter extends React.Component {
 
 }
 
-export default connect()(Filter)
+const mapStateToProps = (state) => {
+    return {
+        results: state.results
+    }
+}
+
+
+export default connect(mapStateToProps)(Filter)

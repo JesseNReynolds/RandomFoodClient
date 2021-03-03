@@ -13,7 +13,7 @@ export const resultsSlice = createSlice({
     }
 )
 
-export const setResults  = resultsSlice.actions;
+export const { setResults } = resultsSlice.actions;
 
 export const selectResults = state => state.results
 

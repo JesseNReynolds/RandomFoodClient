@@ -4,10 +4,26 @@ import { connect } from 'react-redux';
 class Filter extends React.Component {
 
     // access store to get results
+
+    renderList = () => {
+        return (<ul>
+            {this.props.results.map(result => {
+                return <li>test</li>
+            }
+            )}
+        </ul>)
+    }
+
     render() {
+
         return (
             <div>
-                <button onClick={() => console.log(this)}>filter</button>
+                <ul>
+                    {this.props.results.map(result => {
+                    return <li>{result.name}</li>
+                    }
+                    )}
+                </ul>
             </div>
         )
     }
@@ -17,7 +33,7 @@ class Filter extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        results: state.results
+        results: state.resultSlice.results
     }
 }
 

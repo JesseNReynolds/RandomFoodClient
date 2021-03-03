@@ -11,7 +11,8 @@ class RandomContainer extends React.Component {
         return (
             <div>
                 <RandomForm />
-                <Filter />
+                {this.props.results.length > 0 &&
+                <Filter /> }
             </div>
         )
     }
@@ -19,4 +20,13 @@ class RandomContainer extends React.Component {
 
 }
 
-export default connect()(RandomContainer)
+const mapStateToProps = (state) => {
+    return {
+        results: state.resultSlice.results
+    }    
+}
+
+
+
+
+export default connect(mapStateToProps)(RandomContainer)

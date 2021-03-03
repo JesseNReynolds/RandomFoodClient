@@ -125,4 +125,4 @@ class RandomForm extends React.Component {
 
 }
 
-export default connect(null)(RandomForm)
+export default connect()(RandomForm)

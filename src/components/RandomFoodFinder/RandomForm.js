@@ -1,7 +1,7 @@
 import React from 'react';
-import { BACK_END_URL } from '../globals';
+import { BACK_END_URL } from '../../globals';
 import { connect } from 'react-redux';
-import { setResults } from '../redux/resultsSlice';
+import { setResults } from '../../redux/resultsSlice';
 
 class RandomForm extends React.Component {
 

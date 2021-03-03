@@ -3,8 +3,7 @@ import NavContainer from './Nav/NavContainer'
 import {BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Welcome from './Welcome'
-
-import RandomContainer from './RandomContainer'
+import RandomContainer from './RandomFoodFinder/RandomContainer'
 
 export default class App extends React.Component {
     logStore = () => {console.log(this.props.store)}

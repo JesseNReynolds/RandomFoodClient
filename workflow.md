@@ -1,0 +1,3 @@
+- [] Add user login through OAuth
+- [] Add ability to save or reroll chosen restaurant
+- [] Add ability to view past results

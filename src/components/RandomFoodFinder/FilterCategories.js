@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { setFilters } from '../../redux/filterSlice'
 
 class FilterCategories extends React.Component {
 
@@ -34,11 +35,18 @@ class FilterCategories extends React.Component {
         });
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        // this.props.dispatch(setFilters(this.state))
+
+        this.props.dispatch(setFilters(this.state))
+    }
+
     render() {
 
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     {this.typesOfRestaurants().map((category, key) => {
                         return (
                             <div key={key}>
@@ -54,6 +62,9 @@ class FilterCategories extends React.Component {
                             </div>
                         )
                     })}
+                    <input
+                    type='submit'
+                    value="Pick For Me"/>
                 </form>
             </div>
         )

@@ -55,19 +55,24 @@ export class ChosenRestaurant extends Component {
                 <h3>{this.state.chosen.location.display_address[0]}, {this.state.chosen.location.display_address[1]}</h3>
                 <h3>{this.state.chosen.display_phone}</h3>
                 
+                <div>
+                    {this.state.chosen.categories.map((category) => {
+                        return <h3>{category['title']}</h3>
+                    })}
+                </div>
+
+                <h4>{this.state.chosen.rating} stars in {this.state.chosen.review_count} reviews on Yelp</h4>
                 <Ratings
-                rating={this.state.chosen.rating}        widgetDimensions="40px"
+                rating={this.state.chosen.rating}        widgetDimensions="1.25em"
                 widgetSpacings="15px"
-                widgetRatedColors="gold"
-                >
+                widgetRatedColors="gold">
                     <Ratings.Widget />
                     <Ratings.Widget />
                     <Ratings.Widget />
                     <Ratings.Widget />
                     <Ratings.Widget />
                 </Ratings>
-            
-
+                <br/>
                 <img
                 src={this.state.chosen.image_url}
                 alt={this.state.chosen.name}/>

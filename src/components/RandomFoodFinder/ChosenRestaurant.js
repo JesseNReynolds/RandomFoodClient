@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Ratings from 'react-ratings-declarative'
 
 export class ChosenRestaurant extends Component {
 
@@ -53,6 +54,20 @@ export class ChosenRestaurant extends Component {
                 <h1>{this.state.chosen.name}</h1>
                 <h3>{this.state.chosen.location.display_address[0]}, {this.state.chosen.location.display_address[1]}</h3>
                 <h3>{this.state.chosen.display_phone}</h3>
+                
+                <Ratings
+                rating={this.state.chosen.rating}        widgetDimensions="40px"
+                widgetSpacings="15px"
+                widgetRatedColors="gold"
+                >
+                    <Ratings.Widget />
+                    <Ratings.Widget />
+                    <Ratings.Widget />
+                    <Ratings.Widget />
+                    <Ratings.Widget />
+                </Ratings>
+            
+
                 <img
                 src={this.state.chosen.image_url}
                 alt={this.state.chosen.name}/>

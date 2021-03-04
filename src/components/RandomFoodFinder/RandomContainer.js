@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FilterCategories from './FilterCategories';
 import RandomForm from './RandomForm';
+import ChosenRestaurant from './ChosenRestaurant'
 
 class RandomContainer extends React.Component {
 
@@ -12,6 +13,8 @@ class RandomContainer extends React.Component {
                 <RandomForm />
                 {this.props.results.length > 0 &&
                 <FilterCategories /> }
+                {this.props.filters['submitted'] === true &&
+                <ChosenRestaurant />}
             </div>
         )
     }
@@ -21,7 +24,8 @@ class RandomContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        results: state.resultSlice.results
+        results: state.resultSlice.results,
+        filters: state.filterSlice.filters
     }    
 }
 

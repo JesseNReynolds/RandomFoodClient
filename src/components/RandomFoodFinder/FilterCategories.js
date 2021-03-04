@@ -6,7 +6,11 @@ class FilterCategories extends React.Component {
 
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            // this is so once the form is submitted, even if nothing is checked, there will be something
+            // pushed to the store so that the conditional for the next component can see it.
+            'submitted': false
+        }
     }
 
     typesOfRestaurants = () => {
@@ -37,9 +41,9 @@ class FilterCategories extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // this.props.dispatch(setFilters(this.state))
 
-        this.props.dispatch(setFilters(this.state))
+        // set state, then after updated, dispatch
+        this.setState({'submitted': true}, () => this.props.dispatch(setFilters(this.state)))
     }
 
     render() {

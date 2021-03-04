@@ -5,7 +5,9 @@ export class ChosenRestaurant extends Component {
 
     constructor(){
         super()
-        this.state = {chosen: this.chooseRestaurant}
+        this.state = {
+            chosen: {}
+        }
     }
 
     chooseRestaurant = () => {
@@ -36,18 +38,25 @@ export class ChosenRestaurant extends Component {
 
         return eligibleRestaurants[Math.floor(Math.random() * eligibleRestaurants.length)]
 
-       
     }
 
 
-    componentWillMount() {
+    // componentWillMount is deprecated. Recommendations include refactoring the
+    // whole component to a functional one.
+    UNSAFE_componentWillMount() {
         this.setState({chosen: this.chooseRestaurant()})   
     }
 
     render() {
         return (
             <div>
-                {this.state.chosen.name}
+                <h1>{this.state.chosen.name}</h1>
+                <h3>{this.state.chosen.location.display_address[0]}, {this.state.chosen.location.display_address[1]}</h3>
+                <h3>{this.state.chosen.display_phone}</h3>
+                <img
+                src={this.state.chosen.image_url}
+                alt={this.state.chosen.name}/>
+
             </div>
         )
     }

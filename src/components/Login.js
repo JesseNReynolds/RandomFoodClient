@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {setFbId } from '../redux/userSlice'
 import FacebookLogin from 'react-facebook-login'
 
 export class Login extends Component {
     responseFacebook = (response) => {
-        console.log(response);
+        this.props.dispatch(setFbId(response.id))
       }
 
     render() {
@@ -13,14 +14,12 @@ export class Login extends Component {
                 <FacebookLogin
                     appId={process.env.REACT_APP_FACEBOOK_APP_ID}
                     autoLoad={true}
+                    reAuthenticate={true}
                     callback={this.responseFacebook} />
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => ({
-    
-})
 
-export default connect(mapStateToProps)(Login)
+export default connect()(Login)

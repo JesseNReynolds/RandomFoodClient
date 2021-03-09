@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {setFbId } from '../redux/userSlice'
+import { setFbId } from '../redux/userSlice'
 import FacebookLogin from 'react-facebook-login'
 
 export class Login extends Component {
@@ -13,7 +13,7 @@ export class Login extends Component {
             <div>
                 <FacebookLogin
                     appId={process.env.REACT_APP_FACEBOOK_APP_ID}
-                    autoLoad={true}
+                    autoLoad={false}
                     reAuthenticate={true}
                     callback={this.responseFacebook} />
             </div>

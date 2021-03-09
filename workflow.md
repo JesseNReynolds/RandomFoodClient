@@ -1,4 +1,4 @@
 - [x] Add user login through OAuth
-    - [] Backend recognizes FBID with reusable method
-- [] Add ability to save or reroll chosen restaurant
+    - [x] Backend recognizes FBID with reusable method
+- [x] Add ability to save or reroll chosen restaurant
 - [] Add ability to view past results

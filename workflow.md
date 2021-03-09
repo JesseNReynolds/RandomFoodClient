@@ -1,4 +1,6 @@
 - [x] Add user login through OAuth
     - [x] Backend recognizes FBID with reusable method
 - [x] Add ability to save or reroll chosen restaurant
-- [] Add ability to view past results
+- [x] Add ability to view past results
+- [] check out https://github.com/rt2zz/redux-persist
+- [] styling

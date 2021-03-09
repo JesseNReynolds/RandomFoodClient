@@ -7,10 +7,10 @@ export default class NavContainer extends React.Component {
         return(
             <div>
                 <ul>
-                    <NavItem />
-                    <NavItem />
+                    <NavItem path="/history" display="My past results"/>
                 </ul>
             </div>
+
         )
     }
 

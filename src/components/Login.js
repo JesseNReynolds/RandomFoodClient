@@ -2,11 +2,25 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setFbId } from '../redux/userSlice'
 import FacebookLogin from 'react-facebook-login'
+import { BACK_END_URL } from '../globals'
 
 export class Login extends Component {
+    
     responseFacebook = (response) => {
         this.props.dispatch(setFbId(response.id))
-      }
+        
+        fetch(`${BACK_END_URL}/users`, {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               },
+            method: 'post',
+            body: JSON.stringify({user: {fb_id: response.id}})
+        })
+            .then (apiResponse => apiResponse.json())
+            .then (data => console.log(data))
+        
+    }
 
     render() {
         return (

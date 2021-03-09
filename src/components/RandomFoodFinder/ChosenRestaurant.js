@@ -51,6 +51,11 @@ export class ChosenRestaurant extends Component {
     handleReroll = () => {
         this.setState({chosen: this.chooseRestaurant()})
     }
+
+    handleAccept = () => {
+        console.log(this.state)
+    }
+
     render() {
         return (
             <div>
@@ -80,9 +85,14 @@ export class ChosenRestaurant extends Component {
                 src={this.state.chosen.image_url}
                 alt={this.state.chosen.name}/>
 
+                <br />
                 <button
                 onClick={this.handleReroll}>
                     No thanks!
+                </button>
+                <button 
+                onClick={this.handleAccept}>
+                    OK!
                 </button>
             </div>
         )

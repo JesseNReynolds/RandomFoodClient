@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Ratings from 'react-ratings-declarative'
+import { BACK_END_URL } from '../../globals'
 
 export class ChosenRestaurant extends Component {
 
@@ -53,7 +54,17 @@ export class ChosenRestaurant extends Component {
     }
 
     handleAccept = () => {
-        console.log(this.state)
+        fetch(`${BACK_END_URL}/past_results`, {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               },
+            method: 'post',
+            body: JSON.stringify({past_result: {user_id: this.props.user, yelp_id: this.state.chosen.id, restaurant_name: this.state.chosen.name}})
+        })
+            .then (apiResponse => apiResponse.json())
+            .then (data => console.log(data))
+
     }
 
     render() {
@@ -102,7 +113,8 @@ export class ChosenRestaurant extends Component {
 const mapStateToProps = (state) => {
     return {
         results: state.resultSlice.results,
-        filters: state.filterSlice.filters
+        filters: state.filterSlice.filters,
+        user: state.userSlice.fbId
     }    
 }
 

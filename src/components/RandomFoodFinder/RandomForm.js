@@ -114,10 +114,12 @@ class RandomForm extends React.Component {
                     onChange={this.handleChange} />
                     <br/>
                     
-                    <input
-                    className='btn-small'
-                    type='submit'
-                    />
+                    <div className='space-around-wrapper'>
+                        <input
+                        className='btn-small'
+                        type='submit'
+                        />
+                    </div>
 
                 </form>
             </div>

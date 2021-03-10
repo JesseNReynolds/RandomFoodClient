@@ -69,42 +69,51 @@ export class ChosenRestaurant extends Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.state.chosen.name}</h1>
-                <h3>{this.state.chosen.location.display_address[0]}, {this.state.chosen.location.display_address[1]}</h3>
-                <h3>{this.state.chosen.display_phone}</h3>
-                
+            <div className='form-container indent-children'>
+                <h3 className='form-title'>{this.state.chosen.name}</h3>
+                <p>{this.state.chosen.location.display_address[0]}</p>
+                <p>{this.state.chosen.location.display_address[1]}</p>
+                <p>{this.state.chosen.display_phone}</p>
+                <h4 className='price'>{this.state.chosen.price} / $$$$</h4>
                 <div>
                     {this.state.chosen.categories.map((category) => {
-                        return <h3>{category['title']}</h3>
+                        return <p>{category['title']}</p>
                     })}
                 </div>
 
                 <h4>{this.state.chosen.rating} stars in {this.state.chosen.review_count} reviews on Yelp</h4>
-                <Ratings
-                rating={this.state.chosen.rating}        widgetDimensions="1.25em"
-                widgetSpacings="15px"
-                widgetRatedColors="#759FBC">
-                    <Ratings.Widget />
-                    <Ratings.Widget />
-                    <Ratings.Widget />
-                    <Ratings.Widget />
-                    <Ratings.Widget />
-                </Ratings>
+                <div className='space-around-wrapper'>
+                    <Ratings
+                    rating={this.state.chosen.rating}
+                    widgetDimensions="2em"
+                    widgetSpacings="15px"
+                    widgetRatedColors="#759FBC">
+                        <Ratings.Widget />
+                        <Ratings.Widget />
+                        <Ratings.Widget />
+                        <Ratings.Widget />
+                        <Ratings.Widget />
+                    </Ratings>
+                </div>
                 <br/>
                 <img
+                className='chosen-restaurant-image'
                 src={this.state.chosen.image_url}
                 alt={this.state.chosen.name}/>
 
                 <br />
-                <button
-                onClick={this.handleReroll}>
-                    No thanks!
-                </button>
-                <button 
-                onClick={this.handleAccept}>
-                    OK!
-                </button>
+                <div className='space-around-wrapper'>
+                    <button
+                    className='btn-small'
+                    onClick={this.handleReroll}>
+                        No thanks!
+                    </button>
+                    <button
+                    className='btn-small' 
+                    onClick={this.handleAccept}>
+                        OK!
+                    </button>
+                </div>
             </div>
         )
     }

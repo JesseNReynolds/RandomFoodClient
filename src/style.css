@@ -96,12 +96,32 @@
     text-decoration: none;
 }
 
-.checkbox-flex-wrapper{
+.checkbox-flex-wrapper {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 }
 
-.checkbox-container{
+.checkbox-container {
     text-align: center;
+}
+.chosen-restaurant-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 500px;
+    max-width: 90%;
+}
+
+.price {
+    font-weight: bolder;
+}
+
+.indent-children h1,
+.indent-children h2,
+.indent-children h4,
+.indent-children h5,
+.indent-children h6,
+.indent-children p {
+    margin-left: 1rem;
 }

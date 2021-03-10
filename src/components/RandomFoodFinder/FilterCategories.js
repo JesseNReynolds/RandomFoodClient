@@ -68,10 +68,12 @@ class FilterCategories extends React.Component {
                                 </div>
                             )
                         })}
-                        <input
-                        className='btn-small'
-                        type='submit'
-                        value="Pick For Me"/>
+                        <div className='space-around-wrapper'>
+                            <input
+                            className='btn-small'
+                            type='submit'
+                            value="Pick For Me"/>
+                        </div>
                     </div>
                 </form>
             </div>

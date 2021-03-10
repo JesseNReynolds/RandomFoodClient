@@ -84,7 +84,7 @@ export class ChosenRestaurant extends Component {
                 <Ratings
                 rating={this.state.chosen.rating}        widgetDimensions="1.25em"
                 widgetSpacings="15px"
-                widgetRatedColors="gold">
+                widgetRatedColors="#759FBC">
                     <Ratings.Widget />
                     <Ratings.Widget />
                     <Ratings.Widget />

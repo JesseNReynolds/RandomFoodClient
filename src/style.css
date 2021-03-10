@@ -5,6 +5,26 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    max-width: 800px;
+}
+
+.space-around-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .navbar {
     background-color: #8C001A;
     list-style-type: none;
@@ -18,4 +38,22 @@
     color: #F5F3BB;
     font-size: x-large;
     font-weight: bold;
+    line-height: 2.25em;
 }
+
+.btn {
+    line-height: 2em;
+    border-radius: 10px;
+    font-family: Arial;
+    color: #F5F3BB;
+    font-size: large;
+    font-weight: bold;
+    background: #8C001A;
+    text-decoration: none;
+    padding: .3em .5em .3em .5em;
+  }
+  
+.btn:hover {
+    background: #700015;
+    text-decoration: none;
+  }

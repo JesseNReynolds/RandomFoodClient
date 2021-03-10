@@ -6,11 +6,21 @@ export default class Welcome extends React.Component {
     render() {
         return (
             <div>
-                <h3>Hi, I'm RandomFood.</h3>
-                <h3>I help you pick where to eat.</h3>
-                <h4>To continue, I'll need access to your location, but don't worry, I don't store this information, I just use it to help find a restaurant for you to go to.</h4>
-                <Link to='/random'>Let's go!</Link>
-                <Link to='/login'>Login</Link>
+                <br/>
+                <h3 className='center-text'>Hi, I'm RandomFood.</h3>
+                <br/>
+                <h3 className='center-text'>I help you pick where to eat.</h3>
+                <br/>
+                <h4 className='center-text'>To continue, I'll need access to your location.</h4>
+                <br/>
+                <p className='center-text'>I don't store your location, I just use it to help find a restaurant for you to go to.</p>
+                <br/>
+                <p className='center-text'>To store your results for later review, please log in.</p>
+                <br/>
+                <div className='space-around-wrapper'>
+                    <Link to='/login' className='btn'>Login</Link>
+                    <Link to='/random' className='btn'>Random</Link>
+                </div>
             </div>
         )
     }

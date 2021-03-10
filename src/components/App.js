@@ -1,3 +1,5 @@
+import '../style.css'
+
 import React from 'react'
 import NavContainer from './Nav/NavContainer'
 import {BrowserRouter as Router, Route } from 'react-router-dom'
@@ -11,15 +13,15 @@ export default class App extends React.Component {
     logStore = () => {console.log(this.props.store)}
     render() {
         return(
-            <div>
-                <Router>
-                    <NavContainer />
+            <Router>
+                <NavContainer />
+                <div className='content'>
                     <Route exact path='/' component={Welcome}/>
                     <Route exact path='/random' component={RandomContainer}/>
                     <Route exact path='/login' component={Login}/>
                     <Route exact path='/history' component={PastResults}/>
-                </Router>
-            </div>
+                </div>
+            </Router>
         )
     }
 }

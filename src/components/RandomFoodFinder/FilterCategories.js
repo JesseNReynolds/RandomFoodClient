@@ -49,26 +49,30 @@ class FilterCategories extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className='form-container'>
+                <h3 className='form-title'>Categories To Exclude</h3>
                 <form onSubmit={this.handleSubmit}>
-                    {this.typesOfRestaurants().map((category, key) => {
-                        return (
-                            <div key={key}>
-                                <label>
-                                    {category}
-                                </label>
-                                <input
-                                type='checkbox'
-                                name={category}
-                                checked={this.state[category] === undefined ? true
-                                : this.state[category]}
-                                onChange={this.handleChange}/>
-                            </div>
-                        )
-                    })}
-                    <input
-                    type='submit'
-                    value="Pick For Me"/>
+                    <div className='checkbox-flex-wrapper'>
+                        {this.typesOfRestaurants().map((category, key) => {
+                            return (
+                                <div
+                                className='checkbox-container'
+                                key={key}>
+                                    <label>{category}&nbsp;</label>
+                                    <input
+                                    type='checkbox'
+                                    name={category}
+                                    checked={this.state[category] === undefined ? true
+                                    : this.state[category]}
+                                    onChange={this.handleChange}/>
+                                </div>
+                            )
+                        })}
+                        <input
+                        className='btn-small'
+                        type='submit'
+                        value="Pick For Me"/>
+                    </div>
                 </form>
             </div>
         )

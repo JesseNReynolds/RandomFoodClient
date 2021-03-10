@@ -95,3 +95,13 @@
     color: #eae670;
     text-decoration: none;
 }
+
+.checkbox-flex-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.checkbox-container{
+    text-align: center;
+}

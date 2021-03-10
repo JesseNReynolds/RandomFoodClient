@@ -6,7 +6,7 @@ export default class NavItem extends React.Component {
 render() {
     return (
         <li>
-            <Link to={this.props.path}>{this.props.display}</Link>
+            <Link className='navlink' to={this.props.path}>{this.props.display}</Link>
         </li>
     )
 }

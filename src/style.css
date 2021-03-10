@@ -41,6 +41,10 @@
     line-height: 2.25em;
 }
 
+.navlink:hover {
+    color: #eae670;
+}
+
 .btn {
     line-height: 2em;
     border-radius: 10px;
@@ -51,9 +55,43 @@
     background: #8C001A;
     text-decoration: none;
     padding: .3em .5em .3em .5em;
-  }
+}
   
 .btn:hover {
     background: #700015;
+    color: #eae670;
     text-decoration: none;
-  }
+}
+
+.form-container {
+    border: 3px solid black;
+    border-radius: 13px;
+    margin: 1.5em;
+}
+
+.form-title {
+    color: #F5F3BB;
+    background-color: #8C001A;
+    text-align: center;
+    border: 3px solid #8C001A;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.btn-small {
+    line-height: 2em;
+    border-radius: 10px;
+    font-family: Arial;
+    color: #F5F3BB;
+    font-size: large;
+    font-weight: bold;
+    background: #8C001A;
+    text-decoration: none;
+    padding: 0 .5em 0 .5em;
+    margin: .3em;
+}
+  
+.btn-small:hover {
+    background: #700015;
+    color: #eae670;
+    text-decoration: none;
+}

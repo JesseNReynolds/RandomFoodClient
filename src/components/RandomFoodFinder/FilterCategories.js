@@ -53,6 +53,7 @@ class FilterCategories extends React.Component {
                 <h3 className='form-title'>Categories To Exclude</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className='checkbox-flex-wrapper'>
+                        <br/>
                         {this.typesOfRestaurants().map((category, key) => {
                             return (
                                 <div

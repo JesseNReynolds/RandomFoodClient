@@ -62,6 +62,7 @@ class RandomForm extends React.Component {
         return(
             <div className='form-container'>
                 <h3 className='form-title'>Search Parameters</h3>
+                <br/>
                 <form
                 className='center-text'
                 onSubmit={this.handleSubmit}>

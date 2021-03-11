@@ -71,6 +71,7 @@ export class ChosenRestaurant extends Component {
         return (
             <div className='form-container indent-children'>
                 <h3 className='form-title'>How about {this.state.chosen.name}?</h3>
+                <br/>
                 <p>{this.state.chosen.location.display_address[0]}</p>
                 <p>{this.state.chosen.location.display_address[1]}</p>
                 <p>{this.state.chosen.display_phone}</p>

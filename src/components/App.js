@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Route } from 'react-router-dom'
 import Welcome from './Welcome'
 import Login from './Login'
 import RandomContainer from './RandomFoodFinder/RandomContainer'
-import PastResults from './PastResults'
+import PastResults from './PastResults/PastResults'
 
 export default class App extends React.Component {
     logStore = () => {console.log(this.props.store)}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { setFbId } from '../redux/userSlice'
 import FacebookLogin from 'react-facebook-login'
 import { BACK_END_URL } from '../globals'
-import { Redirect, Route } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 export class Login extends Component {

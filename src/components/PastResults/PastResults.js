@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { BACK_END_URL } from '../globals'
+import { BACK_END_URL } from '../../globals'
+import PastResultCard from './PastResultCard'
 
 export class PastResults extends Component {
 
@@ -26,12 +27,15 @@ export class PastResults extends Component {
     render() {
         return (
             <div>
-                {this.props.user}
                 {this.state.pastResults.length > 0 &&
                 this.state.pastResults.map(result => {
-                    return <h1>{result.restaurant_name}</h1>
-                    }
-                )}
+                    console.log(result)
+                    return (
+                    <PastResultCard name={result.restaurant_name}
+                    time={result.created_at} 
+                    />
+                    )
+                })}
             </div>
         )
     }

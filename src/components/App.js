@@ -10,7 +10,7 @@ import RandomContainer from './RandomFoodFinder/RandomContainer'
 import PastResults from './PastResults/PastResults'
 
 export default class App extends React.Component {
-    
+
     logStore = () => {console.log(this.props.store)}
 
     render() {
@@ -18,10 +18,18 @@ export default class App extends React.Component {
             <Router>
                 <NavContainer />
                 <div className='content'>
-                    <Route exact path='/' component={Welcome}/>
-                    <Route exact path='/random' component={RandomContainer}/>
-                    <Route exact path='/login' component={Login}/>
-                    <Route exact path='/history' component={PastResults}/>
+                    <Route exact path='/'>
+                        <Welcome/>
+                    <Route />
+                    <Route exact path='/random'>
+                        <RandomContainer/>
+                    </Route>
+                    <Route exact path='/login'>
+                        <Login />
+                    </Route>
+                    <Route exact path='/history'>
+                        <PastResults />
+                    </Route>
                 </div>
             </Router>
         )

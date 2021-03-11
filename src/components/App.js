@@ -20,7 +20,7 @@ export default class App extends React.Component {
                 <div className='content'>
                     <Route exact path='/'>
                         <Welcome/>
-                    <Route />
+                    </Route>
                     <Route exact path='/random'>
                         <RandomContainer/>
                     </Route>

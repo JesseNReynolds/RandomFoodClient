@@ -10,25 +10,25 @@ import negativeEmpty from '../../images/negative-empty.png'
 export class PastResultCard extends Component {
 
     handleClick = (event) => {
-        console.log(event)
+        console.log('id', this.props.id)
+        this.props.sendUpdate(this.props.id, event.target.alt)
     }
 
     render() {
         
         const matchDateArray = this.props.time.split('-')
         matchDateArray[2] = matchDateArray[2].split('T')[0]
-
         return (
             <div className='form-container'>
                 <h1 className='form-title'>{this.props.name}</h1>
                 <h3 className='center-text'>Original Match: {matchDateArray[1]}/{matchDateArray[2]}/{matchDateArray[0]}</h3>
                 <div className='space-around-wrapper'>
-                    {this.rating === 'negative' && <img src={negative} alt="Negative" onClick={this.handleClick}/>}
-                    {this.rating != 'negative' && <img src={negativeEmpty} alt="Negative" onClick={this.handleClick}/>}
-                    {this.rating === 'neutral' && <img src={neutral} alt="Neutral" onClick={this.handleClick}/>}
-                    {this.rating != 'neutral' && <img src={neutralEmpty} alt="Neutral" onClick={this.handleClick}/>}
-                    {this.rating === 'positive' && <img src={positive} alt="Positive" onClick={this.handleClick}/>}
-                    {this.rating != 'positive' && <img src={positiveEmpty} alt="Positive" onClick={this.handleClick}/>}
+                    {this.props.rating === 'negative' && <img src={negative} alt="negative" />}
+                    {this.props.rating != 'negative' && <img src={negativeEmpty} alt="negative" onClick={this.handleClick}/>}
+                    {this.props.rating === 'neutral' && <img src={neutral} alt="neutral" />}
+                    {this.props.rating != 'neutral' && <img src={neutralEmpty} alt="neutral" onClick={this.handleClick}/>}
+                    {this.props.rating === 'positive' && <img src={positive} alt="positive" />}
+                    {this.props.rating != 'positive' && <img src={positiveEmpty} alt="positive" onClick={this.handleClick}/>}
                 </div>
             </div>
         )

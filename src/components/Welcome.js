@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export default class Welcome extends React.Component {
+
+export class Welcome extends React.Component {
 
     render() {
         return (
@@ -18,7 +20,8 @@ export default class Welcome extends React.Component {
                 <p className='center-text'>To store your results for later review, please log in.</p>
                 <br/>
                 <div className='space-around-wrapper'>
-                    <Link to='/login' className='btn'>Login</Link>
+                    {this.props.user.length < 1 &&
+                    <Link to='/login' className='btn'>Login</Link>}
                     <Link to='/random' className='btn'>Random</Link>
                 </div>
             </div>
@@ -26,4 +29,10 @@ export default class Welcome extends React.Component {
     }
 
 }
+
+const mapStateToProps = (state) => ({
+    user: state.userSlice.fbId
+})
+
+export default connect(mapStateToProps)(Welcome)
 

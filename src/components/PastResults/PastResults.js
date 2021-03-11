@@ -29,11 +29,12 @@ export class PastResults extends Component {
             <div>
                 {this.state.pastResults.length > 0 &&
                 this.state.pastResults.map(result => {
-                    console.log(result)
                     return (
-                    <PastResultCard name={result.restaurant_name}
-                    time={result.created_at} 
-                    />
+                        <PastResultCard name={result.restaurant_name}
+                        time={result.created_at}
+                        id={result.id}
+                        rating={result.rating}
+                        />
                     )
                 })}
             </div>

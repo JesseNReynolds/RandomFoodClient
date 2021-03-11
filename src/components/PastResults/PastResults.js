@@ -22,7 +22,6 @@ export class PastResults extends Component {
         })
             .then (apiResponse => apiResponse.json())
             .then (data => this.setState({pastResults: data}))
-            console.log(this)
     }
 
     sendUpdate = (id, rating) => {
@@ -37,7 +36,6 @@ export class PastResults extends Component {
         })
             .then (apiResponse => apiResponse.json())
             .then (data => this.setState({pastResults: data}))
-            console.log(this)
     }
 
     render() {

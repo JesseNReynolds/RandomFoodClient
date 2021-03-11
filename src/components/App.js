@@ -10,7 +10,9 @@ import RandomContainer from './RandomFoodFinder/RandomContainer'
 import PastResults from './PastResults/PastResults'
 
 export default class App extends React.Component {
+    
     logStore = () => {console.log(this.props.store)}
+
     render() {
         return(
             <Router>

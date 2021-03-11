@@ -63,7 +63,6 @@ export class ChosenRestaurant extends Component {
             body: JSON.stringify({past_result: {user_id: this.props.user, yelp_id: this.state.chosen.id, restaurant_name: this.state.chosen.name}})
         })
             .then (apiResponse => apiResponse.json())
-            .then (data => console.log(data))
 
     }
 

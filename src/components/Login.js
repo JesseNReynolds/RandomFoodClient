@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { setFbId } from '../redux/userSlice'
 import FacebookLogin from 'react-facebook-login'
 import { BACK_END_URL } from '../globals'
+import { Redirect, Route } from 'react-router-dom'
+
 
 export class Login extends Component {
     
@@ -17,23 +19,33 @@ export class Login extends Component {
             method: 'post',
             body: JSON.stringify({user: {fb_id: response.id}})
         })
-            .then (apiResponse => apiResponse.json())
-            .then (data => console.log(data))
-        
+    
     }
 
     render() {
+        if (this.props.user.length > 0) {
+            return <Redirect to='/random'/>
+        } else {
         return (
-            <div>
-                <FacebookLogin
-                    appId={process.env.REACT_APP_FACEBOOK_APP_ID}
-                    autoLoad={false}
-                    reAuthenticate={true}
-                    callback={this.responseFacebook} />
-            </div>
+            <>
+                <br/>
+                <br/>
+                <br/>
+                <div className='space-around-wrapper'>
+                    <FacebookLogin
+                        appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+                        autoLoad={false}
+                        reAuthenticate={true}
+                        callback={this.responseFacebook} />
+                </div>
+            </>
         )
+        }
     }
 }
 
+const mapStateToProps = (state) => ({
+    user: state.userSlice.fbId
+})
 
-export default connect()(Login)
+export default connect(mapStateToProps)(Login)

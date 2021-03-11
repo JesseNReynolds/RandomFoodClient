@@ -4,3 +4,4 @@
 - [x] Add ability to view past results
 - [] check out https://github.com/rt2zz/redux-persist
 - [] styling
+    - []MYPASTRESULTS

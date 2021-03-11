@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/RandomFoodClient/static/css/main.331dfd37.chunk.css",
+    "main.js": "/RandomFoodClient/static/js/main.9d3b8cd2.chunk.js",
+    "main.js.map": "/RandomFoodClient/static/js/main.9d3b8cd2.chunk.js.map",
+    "runtime-main.js": "/RandomFoodClient/static/js/runtime-main.dfc9f514.js",
+    "runtime-main.js.map": "/RandomFoodClient/static/js/runtime-main.dfc9f514.js.map",
+    "static/js/2.c125d86b.chunk.js": "/RandomFoodClient/static/js/2.c125d86b.chunk.js",
+    "static/js/2.c125d86b.chunk.js.map": "/RandomFoodClient/static/js/2.c125d86b.chunk.js.map",
+    "index.html": "/RandomFoodClient/index.html",
+    "static/css/main.331dfd37.chunk.css.map": "/RandomFoodClient/static/css/main.331dfd37.chunk.css.map",
+    "static/js/2.c125d86b.chunk.js.LICENSE.txt": "/RandomFoodClient/static/js/2.c125d86b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfc9f514.js",
+    "static/js/2.c125d86b.chunk.js",
+    "static/css/main.331dfd37.chunk.css",
+    "static/js/main.9d3b8cd2.chunk.js"
+  ]
+}

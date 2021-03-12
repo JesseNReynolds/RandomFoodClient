@@ -7,7 +7,7 @@ class NavContainer extends Component {
     render() {
         return(
             <ul className='navbar'>
-                <NavItem path="/" display="Home" />
+                <NavItem path="" display="Home" />
                 {this.props.user.length > 1 &&
                 <NavItem path="/history" display="My Past Results"/>}
                 {this.props.user.length < 1 &&

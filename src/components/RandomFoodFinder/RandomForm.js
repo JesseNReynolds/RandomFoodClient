@@ -43,6 +43,7 @@ class RandomForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.setLoading(true)
         fetch(`${BACK_END_URL}/query`, {
             headers : { 
                 'Content-Type': 'application/json',
@@ -53,12 +54,13 @@ class RandomForm extends React.Component {
         })
             .then (response => response.json())
             .then (data => this.props.dispatch(setResults(data)))
+            .then (() => this.props.setLoading(false))
         
     }
 
     render() {
         const distances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-        
+
         return(
             <div className='form-container'>
                 <h3 className='form-title'>Search Parameters</h3>

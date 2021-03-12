@@ -3,14 +3,25 @@ import { connect } from 'react-redux';
 import FilterCategories from './FilterCategories';
 import RandomForm from './RandomForm';
 import ChosenRestaurant from './ChosenRestaurant'
+import LoadingSpinner from './LoadingSpinner';
 
 class RandomContainer extends React.Component {
 
+    constructor() {
+        super ()
+        this.state = {
+            loading: false
+        }
+    }
+
+    setLoading = (bool) => this.setState({loading: bool})
 
     render() {
         return (
             <div>
-                <RandomForm />
+                <RandomForm setLoading={this.setLoading}/>
+                {this.state.loading === true && 
+                <LoadingSpinner />}
                 {this.props.results.length > 0 &&
                 <FilterCategories /> }
                 {this.props.filters['submitted'] === true &&

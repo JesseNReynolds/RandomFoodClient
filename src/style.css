@@ -125,3 +125,72 @@
 .indent-children p {
     margin-left: 1rem;
 }
+
+.loading-div {
+    border: 3px solid black;
+    border-radius: 13px;
+    background-color: #8C001A;
+    margin: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    height: 4em;
+}
+
+.dot-nest {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bouncy-boi-1 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #F5F3BB;
+    animation-name: bounce;
+    animation-duration: 1.5s; 
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+.bouncy-boi-2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #F5F3BB;
+    animation-name: bounce;
+    animation-duration: 1.5s; 
+    animation-delay: .3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+.bouncy-boi-3 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #F5F3BB;
+    animation-name: bounce;
+    animation-duration: 1s; 
+    animation-delay: .6s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0rem);}
+    25% {transform: translateY(-1rem);}
+    50% {transform: translateY(0rem);}
+    75% {transform: translateY(1rem);}
+    100% {transform: translateY(0rem);}
+}
+

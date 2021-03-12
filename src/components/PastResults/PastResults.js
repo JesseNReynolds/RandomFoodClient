@@ -41,6 +41,8 @@ export class PastResults extends Component {
     render() {
         return (
             <div>
+                {this.state.pastResults.length < 1 &&
+                <h2 className='center-text'>Once you use the Random feature, results you accept will be saved here. You'll then be able to review them.</h2>}
                 {this.state.pastResults.length > 0 &&
                 this.state.pastResults.sort((a, b) => (a.id > b.id ? 1 : -1)).map(result => {
                     return (

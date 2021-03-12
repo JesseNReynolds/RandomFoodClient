@@ -50,7 +50,8 @@ class FilterCategories extends React.Component {
 
         return (
             <div className='form-container'>
-                <h3 className='form-title'>Categories To Exclude</h3>
+                <h3 className='form-title'>Acceptable Types of Restaurants</h3>
+                <h5 className='center-text'>Unchecking a box means you will not see results that include the category.</h5>
                 <form onSubmit={this.handleSubmit}>
                     <div className='checkbox-flex-wrapper'>
                         <br/>

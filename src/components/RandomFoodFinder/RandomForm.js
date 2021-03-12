@@ -106,7 +106,7 @@ class RandomForm extends React.Component {
                     <br/>
 
                     <label>
-                        {'Only Show Restaurants Open Now'}
+                        {'Only Show Restaurants Open Now'}&nbsp;
                     </label>
                     <input
                     type='checkbox'

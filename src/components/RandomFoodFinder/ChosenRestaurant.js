@@ -106,14 +106,20 @@ export class ChosenRestaurant extends Component {
                     <button
                     className='btn-small'
                     onClick={this.handleReroll}>
-                        No thanks!
+                        No thanks! (Try again)
                     </button>
+                    { this.props.user.length > 0 &&
                     <button
                     className='btn-small' 
                     onClick={this.handleAccept}>
-                        OK!
-                    </button>
+                        OK! (Save)
+                    </button>}
                 </div>
+                { this.props.user.length > 0 &&
+                    <>
+                    <h5 className='center-text'>Clicking OK will save this result to your Past Results, allowing you to rate it later.</h5>
+                    <h5 className='center-text'>In the future I will be able to exclude Past Results you didn't like, or select exclusively from ones you have liked!</h5>
+                    </>}
             </div>
         )
     }

@@ -46,9 +46,10 @@ export class PastResults extends Component {
                 {this.state.pastResults.length > 0 &&
                 this.state.pastResults.sort((a, b) => (a.id > b.id ? 1 : -1)).map(result => {
                     return (
-                        <PastResultCard name={result.restaurant_name}
+                        <PastResultCard 
+                        name={result.restaurant_name}
                         time={result.created_at}
-                        id={result.id}
+                        key={result.id}
                         rating={result.rating}
                         sendUpdate ={this.sendUpdate}
                         />

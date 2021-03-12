@@ -77,7 +77,7 @@ export class ChosenRestaurant extends Component {
                 <h4 className='price'>{this.state.chosen.price} / $$$$</h4>
                 <div>
                     {this.state.chosen.categories.map((category) => {
-                        return <p>{category['title']}</p>
+                        return <p key={category['title']}>{category['title']}</p>
                     })}
                 </div>
 

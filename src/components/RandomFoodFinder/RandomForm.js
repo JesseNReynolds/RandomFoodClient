@@ -76,13 +76,13 @@ class RandomForm extends React.Component {
                         {distances.map((distance, index) => {
                             if (index === 0) {
                                 return(
-                                    <option value={distance}>
+                                    <option key={index} value={distance}>
                                         {distance} mile
                                     </option>
                                 )
                             } else {
                                 return(
-                                    <option value={distance}>
+                                    <option key={index} value={distance}>
                                         {distance} miles
                                     </option>
                                 )

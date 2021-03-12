@@ -55,11 +55,11 @@ class FilterCategories extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className='checkbox-flex-wrapper'>
                         <br/>
-                        {this.typesOfRestaurants().map((category, key) => {
+                        {this.typesOfRestaurants().map((category) => {
                             return (
                                 <div
                                 className='checkbox-container'
-                                key={key}>
+                                key={category}>
                                     <label>{category}&nbsp;</label>
                                     <input
                                     type='checkbox'

@@ -17,6 +17,7 @@ export class PastResultCard extends Component {
         
         const matchDateArray = this.props.time.split('-')
         matchDateArray[2] = matchDateArray[2].split('T')[0]
+
         return (
             <div className='form-container'>
                 <h1 className='form-title'>{this.props.name}</h1>

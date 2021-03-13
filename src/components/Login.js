@@ -33,6 +33,7 @@ export class Login extends Component {
                 <br/>
                 <div className='space-around-wrapper'>
                     <FacebookLogin
+                        isMobile={false}
                         appId={process.env.REACT_APP_FACEBOOK_APP_ID}
                         autoLoad={false}
                         reAuthenticate={true}

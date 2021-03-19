@@ -10,6 +10,7 @@ import negativeEmpty from '../../images/negative-empty.png'
 export class PastResultCard extends Component {
 
     handleClick = (event) => {
+        console.log(this.props)
         this.props.sendUpdate(this.props.id, event.target.alt)
     }
 

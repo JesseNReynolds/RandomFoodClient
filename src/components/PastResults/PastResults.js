@@ -25,7 +25,7 @@ export class PastResults extends Component {
     }
 
     sendUpdate = (id, rating) => {
-        console.log(`${BACK_END_URL}/past_results/${id}`)
+        
         fetch(`${BACK_END_URL}/past_results/${id}`, {
             headers : { 
                 'Content-Type': 'application/json',
@@ -50,6 +50,7 @@ export class PastResults extends Component {
                         name={result.restaurant_name}
                         time={result.created_at}
                         key={result.id}
+                        id={result.id}
                         rating={result.rating}
                         sendUpdate ={this.sendUpdate}
                         />

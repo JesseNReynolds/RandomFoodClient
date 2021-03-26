@@ -1,7 +1,7 @@
 # RandomFood
 
 ## What?
-This is a React front end application which helps indesicive diners find a place to eat. The goal is to reduce the strain of option overload by asking simple questions culminating in a restaurant and an option to re-roll.
+This is a React front end application which helps indesicive diners find a place to eat. The goal is to reduce the strain of option overload by asking simple questions culminating in a restaurant and an option to re-roll. Check out this [short demo video](https://youtu.be/4Sw1_z2xyjc)
 
 ## Why?
 This is my final project for Flatirons School.

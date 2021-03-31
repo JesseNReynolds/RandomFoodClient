@@ -17,6 +17,8 @@ export class Welcome extends React.Component {
                 <br/>
                 <p className='center-text'>I don't store your location, I just use it to help find a restaurant for you to go to.</p>
                 <br/>
+                <p className='center-text'>You can view our Privacy Policy <a href='https://github.com/JesseNReynolds/RandomFoodClient/blob/main/PrivacyPolicy.md'>here</a>.</p>
+                <br/>
                 <p className='center-text'>To store your results for later review, please log in.</p>
                 <br/>
                 <div className='space-around-wrapper'>

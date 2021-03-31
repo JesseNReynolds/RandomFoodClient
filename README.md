@@ -11,5 +11,5 @@ It's also a project I personally use with relative frequency. How often have you
 This repo requires a backend, there is a live version hosted on Heroku. You can view or download the code for the backend on githuib at https://github.com/JesseNReynolds/RandomFoodapi.
 
 ## What's next?
-Trello board coming soon.
+Check the [Trello Board](https://trello.com/b/RKidFrYB/project-tracking) to see what's coming next.
 

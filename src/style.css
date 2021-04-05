@@ -117,6 +117,10 @@
     font-weight: bolder;
 }
 
+.emoji-rating {
+    max-width: 30%;
+}
+
 .indent-children h1,
 .indent-children h2,
 .indent-children h4,

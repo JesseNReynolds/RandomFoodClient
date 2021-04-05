@@ -119,6 +119,8 @@
 
 .emoji-rating {
     max-width: 30%;
+    padding-bottom: 1rem;
+    padding-top: .5rem;
 }
 
 .indent-children h1,

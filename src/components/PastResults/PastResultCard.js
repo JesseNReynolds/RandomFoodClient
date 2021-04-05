@@ -23,12 +23,12 @@ export class PastResultCard extends Component {
                 <h1 className='form-title'>{this.props.name}</h1>
                 <h3 className='center-text'>Original Match: {matchDateArray[1]}/{matchDateArray[2]}/{matchDateArray[0]}</h3>
                 <div className='space-around-wrapper'>
-                    {this.props.rating === 'negative' && <img src={negative} alt="negative" />}
-                    {this.props.rating !== 'negative' && <img src={negativeEmpty} alt="negative" onClick={this.handleClick}/>}
-                    {this.props.rating === 'neutral' && <img src={neutral} alt="neutral" />}
-                    {this.props.rating !== 'neutral' && <img src={neutralEmpty} alt="neutral" onClick={this.handleClick}/>}
-                    {this.props.rating === 'positive' && <img src={positive} alt="positive" />}
-                    {this.props.rating !== 'positive' && <img src={positiveEmpty} alt="positive" onClick={this.handleClick}/>}
+                    {this.props.rating === 'negative' && <img className='emoji-rating' src={negative} alt="negative" />}
+                    {this.props.rating !== 'negative' && <img className='emoji-rating' src={negativeEmpty} alt="negative" onClick={this.handleClick}/>}
+                    {this.props.rating === 'neutral' && <img className='emoji-rating' src={neutral} alt="neutral" />}
+                    {this.props.rating !== 'neutral' && <img className='emoji-rating' src={neutralEmpty} alt="neutral" onClick={this.handleClick}/>}
+                    {this.props.rating === 'positive' && <img className='emoji-rating' src={positive} alt="positive" />}
+                    {this.props.rating !== 'positive' && <img className='emoji-rating' src={positiveEmpty} alt="positive" onClick={this.handleClick}/>}
                 </div>
             </div>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { BACK_END_URL } from '../../globals'
+import ChooseFromFavorites from './ChooseFromFavorites'
 import PastResultCard from './PastResultCard'
 
 export class PastResults extends Component {
@@ -50,8 +51,6 @@ export class PastResults extends Component {
             }
         })
 
-        console.log(this)
-
     }
 
     render() {
@@ -63,13 +62,16 @@ export class PastResults extends Component {
                     onClick={this.chooseFromFaves}>
                         Pick for Me From my Favorites
                     </button>
-                </div>
+                </div>}
 
-                }
+                {this.state.chosenFavorite.id && 
+                <ChooseFromFavorites favorite={this.state.chosenFavorite}/>}
+
                 {this.state.pastResults.length < 1 &&
                 <h2 className='center-text'>
                     Once you use the Random feature, results you accept will be saved here. You'll then be able to review them.
                 </h2>}
+
                 {this.state.pastResults.length > 0 &&
                 this.state.pastResults.sort((a, b) => (a.id > b.id ? 1 : -1)).map(result => {
                     return (
@@ -83,6 +85,7 @@ export class PastResults extends Component {
                         />
                     )
                 })}
+
             </>
         )
     }

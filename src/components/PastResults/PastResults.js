@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { BACK_END_URL } from '../../globals'
-import ChooseFromFavorites from './ChooseFromFavorites'
+import ChosenFromFavorites from './ChosenFromFavorites'
 import PastResultCard from './PastResultCard'
 
 export class PastResults extends Component {
@@ -10,7 +10,8 @@ export class PastResults extends Component {
         super()
         this.state = {
             pastResults: [],
-            chosenFavorite: {}
+            chosenFavorite: {},
+            pickFromClicked: false
         }
     }
         
@@ -42,12 +43,20 @@ export class PastResults extends Component {
 
     chooseFromFaves = () => {
 
-        const favorites = this.state.pastResults.filter(result => result.rating === 'positive')
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                pickFromClicked: true
+            }
+        })
 
+        const favorites = this.state.pastResults.filter(result => result.rating === 'positive')
+        
         this.setState(prevState => {
             return {
                 pastResults: [...prevState.pastResults],
-                chosenFavorite: favorites[Math.floor(Math.random() * favorites.length)] 
+                chosenFavorite: favorites[Math.floor(Math.random() * favorites.length)]
+
             }
         })
 
@@ -57,15 +66,16 @@ export class PastResults extends Component {
         return (
             <>
                 {this.state.pastResults.length > 0 &&
+                this.state.pickFromClicked === false &&
                 <div className='space-around-wrapper'>
                     <button className='btn choose-fave-btn'
                     onClick={this.chooseFromFaves}>
-                        Pick for Me From my Favorites
+                        Pick from My Favorites
                     </button>
                 </div>}
 
                 {this.state.chosenFavorite.id && 
-                <ChooseFromFavorites favorite={this.state.chosenFavorite}/>}
+                <ChosenFromFavorites favorite={this.state.chosenFavorite}/>}
 
                 {this.state.pastResults.length < 1 &&
                 <h2 className='center-text'>

@@ -8,7 +8,8 @@ export class PastResults extends Component {
     constructor() {
         super()
         this.state = {
-            pastResults: []
+            pastResults: [],
+            chosenFavorite: {}
         }
     }
         
@@ -38,14 +39,28 @@ export class PastResults extends Component {
             .then (data => this.setState({pastResults: data}))
     }
 
+    chooseFromFaves = () => {
 
+        const favorites = this.state.pastResults.filter(result => result.rating === 'positive')
+
+        this.setState(prevState => {
+            return {
+                pastResults: [...prevState.pastResults],
+                chosenFavorite: favorites[Math.floor(Math.random() * favorites.length)] 
+            }
+        })
+
+        console.log(this)
+
+    }
 
     render() {
         return (
             <>
                 {this.state.pastResults.length > 0 &&
                 <div className='space-around-wrapper'>
-                    <button className='btn choose-fave-btn'>
+                    <button className='btn choose-fave-btn'
+                    onClick={this.chooseFromFaves}>
                         Pick for Me From my Favorites
                     </button>
                 </div>

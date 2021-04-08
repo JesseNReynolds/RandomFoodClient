@@ -85,8 +85,8 @@ export class ChosenRestaurant extends Component {
                 <div className='space-around-wrapper'>
                     <Ratings
                     rating={this.state.chosen.rating}
-                    widgetDimensions="2em"
-                    widgetSpacings="15px"
+                    widgetDimensions="1.75em"
+                    widgetSpacings="10px"
                     widgetRatedColors="#759FBC">
                         <Ratings.Widget />
                         <Ratings.Widget />

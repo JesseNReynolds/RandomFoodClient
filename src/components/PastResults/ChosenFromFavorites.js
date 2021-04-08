@@ -44,8 +44,8 @@ function ChosenFromFavorites(props) {
             <div className='space-around-wrapper'>
                 <Ratings
                 rating={restaurant.rating}
-                widgetDimensions="2em"
-                widgetSpacings="15px"
+                widgetDimensions="1.75em"
+                widgetSpacings="10px"
                 widgetRatedColors="#759FBC">
                     <Ratings.Widget />
                     <Ratings.Widget />

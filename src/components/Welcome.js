@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+import logo from '../images/logo.svg'
 
 export class Welcome extends React.Component {
 
     render() {
         return (
             <div>
+                <div className='space-around-wrapper'>
+                    <img src={logo}
+                    alt="RandomFood logo"
+                    height='300rem'
+                    className='center-image'/>
+                </div>
                 <br/>
                 <h3 className='center-text'>Hi, I'm RandomFood.</h3>
                 <br/>

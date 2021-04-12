@@ -41,6 +41,18 @@ export class PastResults extends Component {
             .then (data => this.setState({pastResults: data}))
     }
 
+    sendDelete = (id) => {
+        fetch(`${BACK_END_URL}/past_results/${id}`, {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               },
+            method: 'DELETE'
+        })
+            .then (apiResponse => apiResponse.json())
+            .then (data => this.setState({pastResults: data}))
+    }
+
     chooseFromFaves = () => {
 
         this.setState(prevState => {
@@ -91,7 +103,8 @@ export class PastResults extends Component {
                         key={result.id}
                         id={result.id}
                         rating={result.rating}
-                        sendUpdate ={this.sendUpdate}
+                        sendUpdate={this.sendUpdate}
+                        sendDelete={this.sendDelete} 
                         />
                     )
                 })}
